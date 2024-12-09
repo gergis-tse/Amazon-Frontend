@@ -42,7 +42,7 @@ function Payment() {
       try{ 
         setProcessing(true)
         const response= await axiosInstance({method:"POST",
-          url: `/payment/create?total=${total*100}`
+          url:`/payment/create?total=${total*100}`
         })
  const clientSecret=response.data?.clientSecret;
         const {paymentIntent} =await stripe.confirmCardPayment(
